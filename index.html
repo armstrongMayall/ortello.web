@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Primary Meta Tags -->
+    <title>Ortello.ai — Command Your Brand's Data. Amplify Agentic Performance</title>
+    <meta name="description" content="Ortello.ai is API-driven middleware that helps brands control how AI systems access, interpret, and represent their data. Govern, audit, and measure your brand's performance across the Agentic Web.">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.ortello.ai/">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.ortello.ai/">
+    <meta property="og:title" content="Ortello.ai — Command Your Brand's Data. Amplify Agentic Performance">
+    <meta property="og:description" content="Ortello.ai helps brands govern, audit, and measure how AI systems access and represent their data across the Agentic Web.">
+    <meta property="og:image" content="https://www.ortello.ai/social-preview.jpg">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://www.ortello.ai/">
+    <meta name="twitter:title" content="Ortello.ai — Command Your Brand's Data. Amplify Agentic Performance">
+    <meta name="twitter:description" content="Govern, audit, and measure how AI systems see and use your brand's data.">
+    <meta name="twitter:image" content="https://www.ortello.ai/social-preview.jpg">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Ortello.ai",
+      "url": "https://www.ortello.ai/",
+      "logo": "https://www.ortello.ai/logo.png",
+      "description": "Ortello.ai gives brands command over their data in the agentic web — defining what AI can access, how it's used, and how performance is measured."
+    }
+    </script>
+    
+    <style>
+        /* Modern SaaS-inspired design - Two colour system */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #fefefe;
+            background-color: #262523;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        /* Animation Keyframes */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(60px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        
+        /* Apply animations to elements */
+        header {
+            animation: slideDown 0.8s ease-out;
+        }
+        
+        #hero h2 {
+            animation: slideUp 1s ease-out 0.2s backwards;
+        }
+        
+        #hero .subtitle {
+            animation: slideUp 1s ease-out 0.5s backwards;
+        }
+        
+        #hero .button {
+            animation: scaleIn 0.9s ease-out 0.8s backwards;
+        }
+        
+        #hero .visual-placeholder {
+            animation: fadeIn 1.2s ease-out 1s backwards;
+        }
+        
+        .problem-content > h2,
+        #solution > .container > h2,
+        #features h2,
+        #why-it-matters h2,
+        #early-access h2 {
+            animation: slideUp 1s ease-out backwards;
+        }
+        
+        .problem-content > p,
+        #solution > .container > p,
+        #why-it-matters p,
+        #early-access p {
+            animation: fadeIn 1s ease-out 0.3s backwards;
+        }
+        
+        .problem-item {
+            animation: slideUp 1s ease-out backwards;
+        }
+        
+        .problem-item:nth-child(1) {
+            animation-delay: 0.2s;
+        }
+        
+        .problem-item:nth-child(2) {
+            animation-delay: 0.4s;
+        }
+        
+        .problem-item:nth-child(3) {
+            animation-delay: 0.6s;
+        }
+        
+        .solution-text,
+        .solution-visual {
+            animation: slideUp 1s ease-out 0.3s backwards;
+        }
+        
+        .feature-card {
+            animation: slideUp 1s ease-out backwards;
+        }
+        
+        .feature-card:nth-child(1) {
+            animation-delay: 0.2s;
+        }
+        
+        .feature-card:nth-child(2) {
+            animation-delay: 0.3s;
+        }
+        
+        .feature-card:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+        
+        .feature-card:nth-child(4) {
+            animation-delay: 0.5s;
+        }
+        
+        .feature-card:nth-child(5) {
+            animation-delay: 0.6s;
+        }
+        
+        footer {
+            animation: fadeIn 1s ease-out 0.4s backwards;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+        
+        .container-wide {
+            max-width: 100%;
+            padding: 60px 40px;
+        }
+        
+        header {
+            padding: 24px 0;
+        }
+        
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .wip-badge {
+            display: inline-block;
+            padding: 10px 24px;
+            border: 1px solid rgba(254, 254, 254, 0.3);
+            background-color: rgba(254, 254, 254, 0.05);
+            color: #fefefe;
+            font-size: 0.9em;
+            border-radius: 50px;
+            font-weight: 500;
+            opacity: 0.7;
+            cursor: default;
+            user-select: none;
+        }
+        
+        h1 {
+            font-size: 1.5em;
+            margin-bottom: 0;
+            color: #fefefe;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+        }
+        
+        h2 {
+            font-size: 3.5em;
+            margin-bottom: 24px;
+            line-height: 1.1;
+            color: inherit;
+            font-weight: 600;
+            letter-spacing: -0.03em;
+        }
+        
+        h3 {
+            font-size: 1.5em;
+            margin-bottom: 12px;
+            color: inherit;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+        }
+        
+        p {
+            margin-bottom: 16px;
+            color: inherit;
+            font-size: 1.1em;
+            line-height: 1.7;
+        }
+        
+        section {
+            margin-bottom: 0;
+        }
+        
+        /* Hero Section */
+        #hero {
+            text-align: center;
+            padding: 100px 0 80px;
+            background-color: #262523;
+            background-image: url('nero_blank.png');
+            background-size: 172.5% auto;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: #fefefe;
+        }
+        
+        #hero h2 {
+            font-size: 4.5em;
+            max-width: 1000px;
+            margin: 0 auto 32px;
+            color: #fefefe;
+            font-weight: 600;
+            letter-spacing: -0.04em;
+            line-height: 1.05;
+        }
+        
+        #hero .subtitle {
+            font-size: 1.5em;
+            max-width: 700px;
+            margin: 0 auto 48px;
+            line-height: 1.5;
+            color: #fefefe;
+            opacity: 0.9;
+            font-weight: 400;
+        }
+        
+        .button {
+            display: inline-block;
+            padding: 18px 48px;
+            margin: 8px;
+            border: 2px solid #fefefe;
+            text-decoration: none;
+            color: #fefefe;
+            font-size: 1.05em;
+            transition: all 0.2s ease;
+            border-radius: 50px;
+            font-weight: 500;
+            cursor: pointer;
+        }
+        
+        .button:hover {
+            transform: translateY(-2px);
+        }
+        
+        .button-primary {
+            background-color: #fefefe;
+            color: #262523;
+            border: 2px solid #fefefe;
+        }
+        
+        .visual-placeholder {
+            background-color: #262523;
+            padding: 100px 60px;
+            text-align: center;
+            border: 1px solid rgba(254, 254, 254, 0.15);
+            border-radius: 16px;
+            margin: 80px auto 0;
+            max-width: 1000px;
+            color: #fefefe;
+            opacity: 0.5;
+            font-size: 0.95em;
+        }
+        
+        /* Problem Section */
+        #problem {
+            background-color: #262523;
+            color: #fefefe;
+            padding: 80px 0;
+        }
+        
+        .problem-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .problem-content h2 {
+            margin-bottom: 32px;
+            color: #fefefe;
+        }
+        
+        .problem-content p {
+            color: #fefefe;
+            opacity: 0.9;
+            font-size: 1.35em;
+            margin-bottom: 80px;
+            line-height: 1.6;
+        }
+        
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+            margin-top: 80px;
+            text-align: left;
+        }
+        
+        .problem-item {
+            background: #262523;
+            padding: 48px 40px;
+            border: 1px solid rgba(254, 254, 254, 0.15);
+            color: #fefefe;
+            border-radius: 16px;
+            transition: all 0.2s ease;
+        }
+        
+        .problem-item:hover {
+            border-color: rgba(254, 254, 254, 0.3);
+            transform: translateY(-4px);
+        }
+        
+        .problem-item h3 {
+            color: #fefefe;
+            margin-bottom: 16px;
+        }
+        
+        .problem-item p {
+            color: #fefefe;
+            opacity: 0.85;
+            font-size: 1.05em;
+            line-height: 1.6;
+        }
+        
+        /* Solution Section */
+        #solution {
+            padding: 80px 0;
+            background-color: #262523;
+            color: #fefefe;
+        }
+        
+        #solution h2 {
+            color: #fefefe;
+            text-align: center;
+            margin-bottom: 32px;
+        }
+        
+        #solution > .container > p {
+            text-align: center;
+            color: #fefefe;
+            opacity: 0.9;
+            font-size: 1.35em;
+            max-width: 800px;
+            margin: 0 auto 100px;
+            line-height: 1.6;
+        }
+        
+        .solution-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 100px;
+            align-items: center;
+            margin-top: 80px;
+        }
+        
+        .solution-text ul {
+            list-style: none;
+            margin: 48px 0;
+        }
+        
+        .solution-text li {
+            padding: 24px 0;
+            border-bottom: 1px solid rgba(254, 254, 254, 0.1);
+            color: #fefefe;
+            font-size: 1.05em;
+        }
+        
+        .solution-text li:last-child {
+            border-bottom: none;
+        }
+        
+        .solution-text li:before {
+            content: "→ ";
+            font-weight: 600;
+            margin-right: 16px;
+            color: #fefefe;
+            font-size: 1.2em;
+        }
+        
+        .solution-visual {
+            background-color: #262523;
+            padding: 100px 60px;
+            text-align: center;
+            border: 1px solid rgba(254, 254, 254, 0.15);
+            border-radius: 16px;
+            color: #fefefe;
+            opacity: 0.5;
+            font-size: 0.95em;
+        }
+        
+        .callout-box {
+            background-color: #262523;
+            padding: 48px;
+            margin-top: 80px;
+            border-left: 4px solid #fefefe;
+            border-radius: 8px;
+            color: #fefefe;
+        }
+        
+        .callout-box p {
+            color: #fefefe;
+            font-size: 1.3em;
+            margin: 0;
+            line-height: 1.5;
+        }
+        
+        /* Features Section */
+        #features {
+            background-color: #262523;
+            color: #fefefe;
+            padding: 80px 0;
+        }
+        
+        #features h2 {
+            color: #fefefe;
+            text-align: center;
+            margin-bottom: 100px;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 32px;
+            margin-top: 80px;
+        }
+        
+        .feature-card {
+            background: #262523;
+            padding: 56px 44px;
+            border: 1px solid rgba(254, 254, 254, 0.15);
+            color: #fefefe;
+            border-radius: 16px;
+            transition: all 0.2s ease;
+        }
+        
+        .feature-card:hover {
+            border-color: rgba(254, 254, 254, 0.3);
+            transform: translateY(-4px);
+        }
+        
+        .feature-card h3 {
+            margin-bottom: 20px;
+            font-size: 1.5em;
+            color: #fefefe;
+        }
+        
+        .feature-card p {
+            color: #fefefe;
+            opacity: 0.85;
+            font-size: 1.05em;
+            line-height: 1.6;
+        }
+        
+        /* Why It Matters Section */
+        #why-it-matters {
+            padding: 80px 0;
+            text-align: center;
+            background-color: #262523;
+            color: #fefefe;
+        }
+        
+        #why-it-matters .content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        #why-it-matters h2 {
+            color: #fefefe;
+            margin-bottom: 40px;
+        }
+        
+        #why-it-matters p {
+            font-size: 1.35em;
+            line-height: 1.6;
+            color: #fefefe;
+            opacity: 0.9;
+            margin-bottom: 24px;
+        }
+        
+        /* CTA Section */
+        #early-access {
+            background-color: #fefefe;
+            background-image: url('white_blank.png');
+            background-size: 172.5% auto;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: #262523;
+            text-align: center;
+            padding: 80px 0;
+        }
+        
+        #early-access h2 {
+            color: #262523;
+            margin-bottom: 32px;
+        }
+        
+        #early-access p {
+            color: #262523;
+            opacity: 0.85;
+            font-size: 1.35em;
+            margin-bottom: 56px;
+            line-height: 1.6;
+        }
+        
+        #early-access .button {
+            border-color: #262523;
+            color: #262523;
+            border-radius: 50px;
+        }
+        
+        #early-access .button:hover {
+            background-color: rgba(38, 37, 35, 0.05);
+        }
+        
+        #early-access .button-primary {
+            background-color: #262523;
+            color: #fefefe;
+            border-color: #262523;
+            border-radius: 50px;
+        }
+        
+        #early-access .button-primary:hover {
+            background-color: #fefefe;
+            color: #666666;
+            border-color: #666666;
+        }
+        
+        /* Footer */
+        footer {
+            padding: 100px 0 48px;
+            text-align: center;
+            background-color: #262523;
+            color: #fefefe;
+        }
+        
+        footer h3 {
+            color: #fefefe;
+            font-size: 1.1em;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        
+        footer a {
+            color: #fefefe;
+            text-decoration: none;
+            margin: 0 20px;
+            opacity: 0.8;
+            transition: opacity 0.2s ease;
+            font-size: 1.05em;
+        }
+        
+        footer a:hover {
+            opacity: 1;
+        }
+        
+        footer p {
+            margin: 16px 0;
+            color: #fefefe;
+            opacity: 0.6;
+            font-size: 0.95em;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            #hero h2 {
+                font-size: 3em;
+            }
+            
+            #hero .subtitle {
+                font-size: 1.2em;
+            }
+            
+            .problem-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .solution-grid {
+                grid-template-columns: 1fr;
+                gap: 60px;
+            }
+            
+            h2 {
+                font-size: 2.5em;
+            }
+            
+            .container-wide {
+                padding: 80px 24px;
+            }
+            
+            .container {
+                padding: 0 24px;
+            }
+        }
+        
+        /* Respect reduced motion preference */
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header / Navigation -->
+    <header>
+        <div class="container">
+            <h1>Ortello</h1>
+            <span class="wip-badge">work in progress</span>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="container">
+            <h2>Take Control of How AI Sees Your Brand</h2>
+            <p class="subtitle">
+                And how it understands, measures, and represents you across every agentic channel.
+            </p>
+            <div>
+                <a href="#early-access" class="button button-primary">Request Early Access</a>
+            </div>
+        </div>
+        <div class="visual-placeholder">
+            [Visual: Animated flow showing data moving from brand → Ortello.ai → AI agents (LLMs, APIs, search assistants), with Ortello visibly controlling access]
+        </div>
+    </section>
+
+    <!-- The Problem -->
+    <section id="problem">
+        <div class="container-wide">
+            <div class="problem-content">
+                <h2>The AI-First Web Is Already Here</h2>
+                <p>Your customers are no longer typing queries — they're talking to systems. Those systems pull from public data, not verified brand sources.</p>
+                
+                <div class="problem-grid">
+                    <div class="problem-item">
+                        <h3>Fragmented Information</h3>
+                        <p>Your information is fragmented across the web.</p>
+                    </div>
+                    <div class="problem-item">
+                        <h3>AI Assumptions</h3>
+                        <p>AI tools make assumptions about your products and offers.</p>
+                    </div>
+                    <div class="problem-item">
+                        <h3>No Control</h3>
+                        <p>You have no visibility, audit trail, or control over how you're represented.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Solution -->
+    <section id="solution">
+        <div class="container">
+            <h2>The Solution</h2>
+            <p>
+                Ortello.ai gives you governance and visibility across the Agentic Layer.
+            </p>
+            
+            <div class="solution-grid">
+                <div class="solution-text">
+                    <p>
+                        It sits between your data and the AI systems that use it, defining what can be shared, how it's accessed, and under what terms.
+                    </p>
+                    
+                    <h3>What it does:</h3>
+                    <ul>
+                        <li>Connects your enterprise systems via secure APIs</li>
+                        <li>Sets and audits data permissions across MCP, ACP, and related protocols</li>
+                        <li>Monitors agentic visibility, engagement, and conversion</li>
+                        <li>Reports on how your brand is represented and discovered in AI environments</li>
+                    </ul>
+                </div>
+                
+                <div class="solution-visual">
+                    [Visual: Data governance flow diagram]
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Features -->
+    <section id="features">
+        <div class="container-wide">
+            <h2>Key Features</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3>Data Governance Layer</h3>
+                    <p>Define and enforce data permissions between your brand and external AI systems.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Audit & Compliance Controls</h3>
+                    <p>Log and monitor every agentic data exchange for accuracy and compliance.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Agentic Performance Analytics</h3>
+                    <p>Measure visibility, engagement, and conversion across AI-driven surfaces.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>API-Driven Integration</h3>
+                    <p>Plug into your existing data stack — from CMS to CRM to product feeds.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Brand Safety by Design</h3>
+                    <p>Ensure AI systems only surface verified, brand-approved information.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why It Matters -->
+    <section id="why-it-matters">
+        <div class="container">
+            <div class="content">
+                <h2>Why It Matters</h2>
+                <p>
+                    In the next phase of the internet, AI agents replace browsers.
+                    If you don't control how your data is accessed and represented, you lose control of your brand.
+                </p>
+                <p>
+                    Ortello.ai gives marketers, data leaders, and compliance teams the infrastructure to stay visible, trusted, and measurable in an AI-first world.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="early-access">
+        <div class="container-wide">
+            <h2>Be Discoverable — On Your Terms</h2>
+            <p>
+                Join the brands defining how AI systems access and represent information.
+            </p>
+            <div>
+                <a href="#contact" class="button button-primary">Request Early Access</a>
+                <a href="#solution" class="button">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <h3>About Ortello.ai</h3>
+            <p>Contact: <a href="https://wa.me/" target="_blank">WhatsApp</a></p>
+            <p>
+                <a href="#" target="_blank">LinkedIn</a> | 
+                <a href="#" target="_blank">Threads</a> | 
+                <a href="#" target="_blank">GitHub</a>
+            </p>
+            <p style="margin-top: 32px;">© 2025 Ortello.ai. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
