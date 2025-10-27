@@ -824,6 +824,10 @@
             box-shadow: 0 4px 12px rgba(254, 254, 254, 0.2);
         }
         
+        .success-message {
+            animation: slideUp 0.3s ease-out;
+        }
+        
         @media (max-width: 768px) {
             .modal-content {
                 padding: 40px 24px;
@@ -1089,6 +1093,62 @@
             }
             if (event.target === investorInfoModal) {
                 closeModal('investorInfoModal');
+            }
+        });
+        
+        // Form Submission Handler
+        document.addEventListener('DOMContentLoaded', () => {
+            const forms = document.querySelectorAll('form[data-netlify="true"]');
+            
+            forms.forEach(form => {
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Collect form data
+                    const formData = new FormData(this);
+                    formData.append('form-name', this.getAttribute('name'));
+                    
+                    // Convert to URL encoded format for Netlify
+                    const encodedData = new URLSearchParams(formData);
+                    
+                    // Submit via fetch
+                    fetch('/', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                        body: encodedData
+                    })
+                    .then(() => {
+                        // Show success message
+                        showSuccessMessage(this);
+                        // Reset form
+                        this.reset();
+                    })
+                    .catch(error => {
+                        console.error('Form submission error:', error);
+                        alert('There was an error submitting the form. Please try again.');
+                    });
+                });
+            });
+            
+            // Success message display
+            function showSuccessMessage(form) {
+                const modalId = form.closest('.modal').id;
+                const modalContent = form.closest('.modal-content');
+                
+                // Hide form
+                form.style.display = 'none';
+                
+                // Create and show success message
+                const successMessage = document.createElement('div');
+                successMessage.className = 'success-message';
+                successMessage.innerHTML = `
+                    <div style="text-align: center;">
+                        <h3 style="color: #fefefe; margin-bottom: 16px; font-size: 1.5em;">Thank you!</h3>
+                        <p style="color: #fefefe; opacity: 0.9; margin-bottom: 24px;">Your submission has been received. We'll be in touch in the next working day.</p>
+                        <button onclick="location.reload()" class="form-submit" style="max-width: 200px; margin: 0 auto;">Close</button>
+                    </div>
+                `;
+                modalContent.appendChild(successMessage);
             }
         });
         
