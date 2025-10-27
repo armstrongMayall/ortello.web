@@ -11,6 +11,10 @@
     <!-- Canonical URL -->
     <link rel="canonical" href="https://www.ortello.ai/">
     
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon" href="assets/favicon original.ico">
+    <link rel="alternate icon" type="image/x-icon" href="assets/favicon transparent.ico">
+    
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.ortello.ai/">
@@ -37,6 +41,11 @@
     }
     </script>
     
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
     <style>
         /* Modern SaaS-inspired design - Two colour system */
         * {
@@ -46,11 +55,12 @@
         }
         
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif;
+            font-family: 'Work Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif;
             line-height: 1.6;
             color: #fefefe;
             background-color: #262523;
             -webkit-font-smoothing: antialiased;
+            font-weight: 300;
         }
         
         /* Animation Keyframes */
@@ -96,6 +106,42 @@
             }
         }
         
+        @keyframes zoomInFromLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-100px) scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0) scale(1);
+            }
+        }
+        
+        /* Scroll-triggered animations */
+        .scroll-reveal {
+            opacity: 0;
+        }
+        
+        .scroll-reveal.revealed {
+            animation: slideUp 0.8s ease-out forwards;
+        }
+        
+        .scroll-reveal-zoom-left {
+            opacity: 0;
+        }
+        
+        .scroll-reveal-zoom-left.revealed {
+            animation: zoomInFromLeft 0.6s ease-out forwards;
+        }
+        
+        .scroll-reveal-stagger {
+            opacity: 0;
+        }
+        
+        .scroll-reveal-stagger.revealed {
+            animation: slideUp 0.8s ease-out forwards;
+        }
+        
         /* Apply animations to elements */
         header {
             animation: slideDown 0.8s ease-out;
@@ -109,73 +155,19 @@
             animation: slideUp 1s ease-out 0.5s backwards;
         }
         
-        #hero .button {
+        #hero .button:nth-of-type(1) {
             animation: scaleIn 0.9s ease-out 0.8s backwards;
+        }
+        
+        #hero .button:nth-of-type(2) {
+            animation: scaleIn 0.9s ease-out 0.95s backwards;
         }
         
         #hero .visual-placeholder {
             animation: fadeIn 1.2s ease-out 1s backwards;
         }
         
-        .problem-content > h2,
-        #solution > .container > h2,
-        #features h2,
-        #why-it-matters h2,
-        #early-access h2 {
-            animation: slideUp 1s ease-out backwards;
-        }
-        
-        .problem-content > p,
-        #solution > .container > p,
-        #why-it-matters p,
-        #early-access p {
-            animation: fadeIn 1s ease-out 0.3s backwards;
-        }
-        
-        .problem-item {
-            animation: slideUp 1s ease-out backwards;
-        }
-        
-        .problem-item:nth-child(1) {
-            animation-delay: 0.2s;
-        }
-        
-        .problem-item:nth-child(2) {
-            animation-delay: 0.4s;
-        }
-        
-        .problem-item:nth-child(3) {
-            animation-delay: 0.6s;
-        }
-        
-        .solution-text,
-        .solution-visual {
-            animation: slideUp 1s ease-out 0.3s backwards;
-        }
-        
-        .feature-card {
-            animation: slideUp 1s ease-out backwards;
-        }
-        
-        .feature-card:nth-child(1) {
-            animation-delay: 0.2s;
-        }
-        
-        .feature-card:nth-child(2) {
-            animation-delay: 0.3s;
-        }
-        
-        .feature-card:nth-child(3) {
-            animation-delay: 0.4s;
-        }
-        
-        .feature-card:nth-child(4) {
-            animation-delay: 0.5s;
-        }
-        
-        .feature-card:nth-child(5) {
-            animation-delay: 0.6s;
-        }
+        /* Sections will be animated on scroll via JavaScript */
         
         footer {
             animation: fadeIn 1s ease-out 0.4s backwards;
@@ -221,7 +213,19 @@
             margin-bottom: 0;
             color: #fefefe;
             font-weight: 600;
-            letter-spacing: -0.02em;
+            letter-spacing: -0.08em;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+        
+        .logo img {
+            max-height: 150px;
+            width: auto;
+            display: block;
         }
         
         h2 {
@@ -230,7 +234,7 @@
             line-height: 1.1;
             color: inherit;
             font-weight: 600;
-            letter-spacing: -0.03em;
+            letter-spacing: -0.08em;
         }
         
         h3 {
@@ -238,7 +242,7 @@
             margin-bottom: 12px;
             color: inherit;
             font-weight: 600;
-            letter-spacing: -0.02em;
+            letter-spacing: -0.08em;
         }
         
         p {
@@ -246,6 +250,7 @@
             color: inherit;
             font-size: 1.1em;
             line-height: 1.7;
+            font-weight: 300;
         }
         
         section {
@@ -270,7 +275,7 @@
             margin: 0 auto 32px;
             color: #fefefe;
             font-weight: 600;
-            letter-spacing: -0.04em;
+            letter-spacing: -0.08em;
             line-height: 1.05;
         }
         
@@ -282,6 +287,13 @@
             color: #fefefe;
             opacity: 0.9;
             font-weight: 400;
+        }
+        
+        #hero .button-container {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
         }
         
         .button {
@@ -308,24 +320,41 @@
             border: 2px solid #fefefe;
         }
         
+        .button-secondary {
+            background-color: transparent;
+            color: #fefefe;
+            border: 2px solid #fefefe;
+        }
+        
+        .button-secondary:hover {
+            background-color: rgba(254, 254, 254, 0.1);
+        }
+        
         .visual-placeholder {
             background-color: #262523;
-            padding: 100px 60px;
-            text-align: center;
+            padding: 60px 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             border: 1px solid rgba(254, 254, 254, 0.15);
             border-radius: 16px;
             margin: 80px auto 0;
+            margin-bottom: -40px;
             max-width: 1000px;
             color: #fefefe;
-            opacity: 0.5;
-            font-size: 0.95em;
+        }
+        
+        .visual-placeholder img {
+            max-width: 100%;
+            height: auto;
+            display: block;
         }
         
         /* Problem Section */
         #problem {
             background-color: #262523;
             color: #fefefe;
-            padding: 80px 0;
+            padding: 60px 0 80px;
         }
         
         .problem-content {
@@ -383,7 +412,7 @@
         
         /* Solution Section */
         #solution {
-            padding: 80px 0;
+            padding: 40px 0 80px;
             background-color: #262523;
             color: #fefefe;
         }
@@ -438,7 +467,7 @@
         
         .solution-visual {
             background-color: #262523;
-            padding: 100px 60px;
+            padding: 0;
             text-align: center;
             border: 1px solid rgba(254, 254, 254, 0.15);
             border-radius: 16px;
@@ -467,7 +496,7 @@
         #features {
             background-color: #262523;
             color: #fefefe;
-            padding: 80px 0;
+            padding: 40px 0 80px;
         }
         
         #features h2 {
@@ -629,6 +658,21 @@
                 font-size: 1.2em;
             }
             
+            #hero .button-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            #hero .button {
+                width: 100%;
+                max-width: 320px;
+            }
+            
+            .visual-placeholder {
+                padding: 40px 20px;
+                margin-bottom: -40px;
+            }
+            
             .problem-grid {
                 grid-template-columns: 1fr;
             }
@@ -661,6 +705,131 @@
                 transition-duration: 0.01ms !important;
             }
         }
+        
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(38, 37, 35, 0.95);
+            backdrop-filter: blur(4px);
+        }
+        
+        .modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .modal-content {
+            background-color: #262523;
+            padding: 60px;
+            border-radius: 16px;
+            border: 1px solid rgba(254, 254, 254, 0.15);
+            width: 90%;
+            max-width: 500px;
+            animation: slideUp 0.3s ease-out;
+        }
+        
+        .close-modal {
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            color: #fefefe;
+            cursor: pointer;
+            border: none;
+            background: none;
+            padding: 0;
+            margin: 0;
+            opacity: 0.7;
+            transition: opacity 0.2s ease;
+        }
+        
+        .close-modal:hover {
+            opacity: 1;
+        }
+        
+        .modal h2 {
+            color: #fefefe;
+            margin-bottom: 8px;
+            font-size: 2em;
+        }
+        
+        .modal-subtitle {
+            color: #fefefe;
+            opacity: 0.8;
+            font-size: 1em;
+            margin-bottom: 32px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #fefefe;
+            font-size: 0.95em;
+            font-weight: 500;
+        }
+        
+        .form-group input {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid rgba(254, 254, 254, 0.2);
+            border-radius: 8px;
+            background-color: rgba(254, 254, 254, 0.05);
+            color: #fefefe;
+            font-family: inherit;
+            font-size: 1em;
+            transition: border-color 0.2s ease;
+        }
+        
+        .form-group input:focus {
+            outline: none;
+            border-color: rgba(254, 254, 254, 0.4);
+            background-color: rgba(254, 254, 254, 0.08);
+        }
+        
+        .form-message {
+            background-color: rgba(254, 254, 254, 0.05);
+            border-left: 3px solid #fefefe;
+            padding: 12px 16px;
+            border-radius: 4px;
+            color: #fefefe;
+            font-size: 0.9em;
+            margin-bottom: 24px;
+        }
+        
+        .form-submit {
+            width: 100%;
+            padding: 14px 24px;
+            background-color: #fefefe;
+            color: #262523;
+            border: none;
+            border-radius: 8px;
+            font-size: 1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        
+        .form-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(254, 254, 254, 0.2);
+        }
+        
+        @media (max-width: 768px) {
+            .modal-content {
+                padding: 40px 24px;
+                width: 95%;
+            }
+        }
     </style>
 </head>
 <body>
@@ -668,7 +837,9 @@
     <!-- Header / Navigation -->
     <header>
         <div class="container">
-            <h1>Ortello</h1>
+            <a href="/" class="logo">
+                <img src="assets/Original Logo.png" alt="Ortello">
+            </a>
             <span class="wip-badge">work in progress</span>
         </div>
     </header>
@@ -680,12 +851,13 @@
             <p class="subtitle">
                 And how it understands, measures, and represents you across every agentic channel.
             </p>
-            <div>
-                <a href="#early-access" class="button button-primary">Request Early Access</a>
+            <div class="button-container">
+                <a href="#" onclick="openModal('earlyInterestModal'); return false;" class="button button-primary">Early Interest</a>
+                <a href="#" onclick="openModal('investorInfoModal'); return false;" class="button button-secondary">Investor Info</a>
             </div>
         </div>
         <div class="visual-placeholder">
-            [Visual: Animated flow showing data moving from brand → Ortello.ai → AI agents (LLMs, APIs, search assistants), with Ortello visibly controlling access]
+            <img src="assets/ortello_flow.gif" alt="Animated flow showing data moving from brand through Ortello.ai to AI agents">
         </div>
     </section>
 
@@ -693,21 +865,22 @@
     <section id="problem">
         <div class="container-wide">
             <div class="problem-content">
-                <h2>The AI-First Web Is Already Here</h2>
-                <p>Your customers are no longer typing queries — they're talking to systems. Those systems pull from public data, not verified brand sources.</p>
+                <h2 class="scroll-reveal">The AI-First Web Is Already Here</h2>
+                <p class="scroll-reveal">Your customers are no longer typing queries. They're talking to systems. Those systems pull from public data, not verified brand sources.</p>
                 
+                <h2 class="scroll-reveal" style="font-size: 2.5em; margin-top: 80px;">The Challenge</h2>
                 <div class="problem-grid">
-                    <div class="problem-item">
+                    <div class="problem-item scroll-reveal-stagger">
                         <h3>Fragmented Information</h3>
-                        <p>Your information is fragmented across the web.</p>
+                        <p>Your data is scattered across the web.</p>
                     </div>
-                    <div class="problem-item">
+                    <div class="problem-item scroll-reveal-stagger">
                         <h3>AI Assumptions</h3>
-                        <p>AI tools make assumptions about your products and offers.</p>
+                        <p>Intelligent systems fill the gaps with guesses about your products, services, and pricing.</p>
                     </div>
-                    <div class="problem-item">
-                        <h3>No Control</h3>
-                        <p>You have no visibility, audit trail, or control over how you're represented.</p>
+                    <div class="problem-item scroll-reveal-stagger">
+                        <h3>No Command</h3>
+                        <p>You have no visibility, audit trail, or control over how your brand is represented.</p>
                     </div>
                 </div>
             </div>
@@ -717,28 +890,26 @@
     <!-- The Solution -->
     <section id="solution">
         <div class="container">
-            <h2>The Solution</h2>
-            <p>
-                Ortello.ai gives you governance and visibility across the Agentic Layer.
+            <h2 class="scroll-reveal">The Command Layer</h2>
+            <p class="scroll-reveal">
+                Ortello.ai gives brands governance and visibility across the agentic web. It sits between your data and the AI systems that use it — defining what can be shared, how it's accessed, and under what terms.
             </p>
             
             <div class="solution-grid">
-                <div class="solution-text">
-                    <p>
-                        It sits between your data and the AI systems that use it, defining what can be shared, how it's accessed, and under what terms.
-                    </p>
-                    
-                    <h3>What it does:</h3>
+                <div class="solution-text scroll-reveal">
+                    <h3>How Ortello Works</h3>
                     <ul>
-                        <li>Connects your enterprise systems via secure APIs</li>
-                        <li>Sets and audits data permissions across MCP, ACP, and related protocols</li>
-                        <li>Monitors agentic visibility, engagement, and conversion</li>
-                        <li>Reports on how your brand is represented and discovered in AI environments</li>
+                        <li class="scroll-reveal-zoom-left">Connects your enterprise systems through secure APIs</li>
+                        <li class="scroll-reveal-zoom-left">Sets and audits data permissions across MCP, ACP, and related protocols</li>
+                        <li class="scroll-reveal-zoom-left">Monitors agentic visibility, engagement, and conversion</li>
+                        <li class="scroll-reveal-zoom-left">Reports how your brand is represented and discovered in AI environments</li>
                     </ul>
                 </div>
                 
                 <div class="solution-visual">
-                    [Visual: Data governance flow diagram]
+                    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px;">
+                        <iframe src="https://share.descript.com/embed/b9fzDxAHAT9" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" allowfullscreen></iframe>
+                    </div>
                 </div>
             </div>
         </div>
@@ -747,27 +918,32 @@
     <!-- Key Features -->
     <section id="features">
         <div class="container-wide">
-            <h2>Key Features</h2>
+            <h2 class="scroll-reveal">Key Features</h2>
+            <p class="scroll-reveal" style="text-align: center; font-size: 1.3em; max-width: 700px; margin: 0 auto 100px; opacity: 0.9;">Every feature is built to help you command your brand's data.</p>
             <div class="features-grid">
-                <div class="feature-card">
+                <div class="feature-card scroll-reveal-stagger">
                     <h3>Data Governance Layer</h3>
                     <p>Define and enforce data permissions between your brand and external AI systems.</p>
                 </div>
-                <div class="feature-card">
+                <div class="feature-card scroll-reveal-stagger">
                     <h3>Audit & Compliance Controls</h3>
                     <p>Log and monitor every agentic data exchange for accuracy and compliance.</p>
                 </div>
-                <div class="feature-card">
+                <div class="feature-card scroll-reveal-stagger">
                     <h3>Agentic Performance Analytics</h3>
                     <p>Measure visibility, engagement, and conversion across AI-driven surfaces.</p>
                 </div>
-                <div class="feature-card">
+                <div class="feature-card scroll-reveal-stagger">
                     <h3>API-Driven Integration</h3>
-                    <p>Plug into your existing data stack — from CMS to CRM to product feeds.</p>
+                    <p>Connect seamlessly with your existing data stack, from CMS to CRM to product feeds.</p>
                 </div>
-                <div class="feature-card">
+                <div class="feature-card scroll-reveal-stagger">
                     <h3>Brand Safety by Design</h3>
                     <p>Ensure AI systems only surface verified, brand-approved information.</p>
+                </div>
+                <div class="feature-card scroll-reveal-stagger">
+                    <h3>Performance Intelligence Engine</h3>
+                    <p>Transform agentic activity into measurable insight and return performance to your brand.</p>
                 </div>
             </div>
         </div>
@@ -777,12 +953,12 @@
     <section id="why-it-matters">
         <div class="container">
             <div class="content">
-                <h2>Why It Matters</h2>
-                <p>
+                <h2 class="scroll-reveal">Why It Matters</h2>
+                <p class="scroll-reveal">
                     In the next phase of the internet, AI agents replace browsers.
                     If you don't control how your data is accessed and represented, you lose control of your brand.
                 </p>
-                <p>
+                <p class="scroll-reveal">
                     Ortello.ai gives marketers, data leaders, and compliance teams the infrastructure to stay visible, trusted, and measurable in an AI-first world.
                 </p>
             </div>
@@ -792,30 +968,164 @@
     <!-- CTA Section -->
     <section id="early-access">
         <div class="container-wide">
-            <h2>Be Discoverable — On Your Terms</h2>
-            <p>
+            <h2 class="scroll-reveal">Be Discoverable — On Your Terms</h2>
+            <p class="scroll-reveal">
                 Join the brands defining how AI systems access and represent information.
             </p>
-            <div>
-                <a href="#contact" class="button button-primary">Request Early Access</a>
-                <a href="#solution" class="button">Learn More</a>
+            <div class="scroll-reveal">
+                <a href="#" onclick="openModal('earlyInterestModal'); return false;" class="button button-primary">Request Early Access</a>
+                <a href="#" onclick="openModal('investorInfoModal'); return false;" class="button">Investor Info</a>
             </div>
         </div>
     </section>
 
+    <!-- Early Interest Modal -->
+    <div id="earlyInterestModal" class="modal">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeModal('earlyInterestModal')">&times;</button>
+            <h2>Early Interest</h2>
+            <p class="modal-subtitle">Register your interest in Ortello.ai</p>
+            <form name="early-interest" method="POST" data-netlify="true">
+                <div class="form-message">
+                    We'll be in touch with you in the next working day.
+                </div>
+                
+                <div class="form-group">
+                    <label for="ei-name">Name *</label>
+                    <input type="text" id="ei-name" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="ei-company">Company *</label>
+                    <input type="text" id="ei-company" name="company" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="ei-email">Email *</label>
+                    <input type="email" id="ei-email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="ei-phone">Telephone *</label>
+                    <input type="tel" id="ei-phone" name="telephone" required>
+                </div>
+                
+                <button type="submit" class="form-submit">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Investor Info Modal -->
+    <div id="investorInfoModal" class="modal">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeModal('investorInfoModal')">&times;</button>
+            <h2>Investor Info</h2>
+            <p class="modal-subtitle">Register your interest in investing</p>
+            <form name="investor-info" method="POST" data-netlify="true">
+                <div class="form-message">
+                    We'll be in touch with you in the next working day.
+                </div>
+                
+                <div class="form-group">
+                    <label for="ii-name">Name *</label>
+                    <input type="text" id="ii-name" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="ii-company">Company *</label>
+                    <input type="text" id="ii-company" name="company" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="ii-email">Email *</label>
+                    <input type="email" id="ii-email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="ii-phone">Telephone *</label>
+                    <input type="tel" id="ii-phone" name="telephone" required>
+                </div>
+                
+                <button type="submit" class="form-submit">Submit</button>
+            </form>
+        </div>
+    </div>
+
     <!-- Footer -->
     <footer id="contact">
         <div class="container">
-            <h3>About Ortello.ai</h3>
-            <p>Contact: <a href="https://wa.me/" target="_blank">WhatsApp</a></p>
-            <p>
-                <a href="#" target="_blank">LinkedIn</a> | 
-                <a href="#" target="_blank">Threads</a> | 
-                <a href="#" target="_blank">GitHub</a>
+            <p>© 2025 Ortello.ai Built for marketers, data leaders, and compliance teams shaping the AI-first web.</p>
+            <p style="margin-top: 24px;">
+                <a href="https://www.linkedin.com/" target="_blank">LinkedIn</a> | 
+                <a href="https://www.threads.net/" target="_blank">Threads</a> | 
+                <a href="https://github.com/" target="_blank">GitHub</a>
             </p>
-            <p style="margin-top: 32px;">© 2025 Ortello.ai. All rights reserved.</p>
         </div>
     </footer>
+
+    <script>
+        // Modal Functions
+        function openModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.classList.add('active');
+            }
+        }
+        
+        function closeModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.classList.remove('active');
+            }
+        }
+        
+        // Close modal when clicking outside of it
+        window.addEventListener('click', function(event) {
+            const earlyInterestModal = document.getElementById('earlyInterestModal');
+            const investorInfoModal = document.getElementById('investorInfoModal');
+            
+            if (event.target === earlyInterestModal) {
+                closeModal('earlyInterestModal');
+            }
+            if (event.target === investorInfoModal) {
+                closeModal('investorInfoModal');
+            }
+        });
+        
+        // Intersection Observer for scroll-triggered animations
+        const observerOptions = {
+            threshold: 0.15,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('revealed');
+                    // Optional: unobserve after revealing to prevent re-triggering
+                    // observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        // Observe all scroll-reveal elements
+        document.addEventListener('DOMContentLoaded', () => {
+            const scrollRevealElements = document.querySelectorAll('.scroll-reveal, .scroll-reveal-zoom-left, .scroll-reveal-stagger');
+            
+            // Add staggered delays for stagger elements
+            document.querySelectorAll('.scroll-reveal-stagger').forEach((el, index) => {
+                el.style.transitionDelay = `${index * 0.15}s`;
+                el.style.animationDelay = `${index * 0.15}s`;
+            });
+            
+            // Add staggered delays for zoom-left list items
+            document.querySelectorAll('.scroll-reveal-zoom-left').forEach((el, index) => {
+                el.style.animationDelay = `${index * 0.2}s`;
+            });
+            
+            scrollRevealElements.forEach(el => observer.observe(el));
+        });
+    </script>
 
 </body>
 </html>
