@@ -1099,8 +1099,9 @@
         });
         
         // Form Submission Handler - Following Netlify official documentation
+        // FIX: Netlify strips the data-netlify attribute at build time, so we select by form name instead
         document.addEventListener('DOMContentLoaded', () => {
-            const forms = document.querySelectorAll('form[data-netlify="true"]');
+            const forms = document.querySelectorAll('form[name="early-interest"], form[name="investor-info"]');
             
             forms.forEach(form => {
                 form.addEventListener('submit', handleFormSubmit);
