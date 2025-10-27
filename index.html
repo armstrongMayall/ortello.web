@@ -1181,5 +1181,23 @@
         });
     </script>
 
+    <!-- Hidden fallback forms for Netlify build-time detection -->
+    <!-- These ensure Netlify properly detects and processes form fields during build -->
+    <form name="early-interest" method="POST" data-netlify="true" style="display: none;">
+        <input type="hidden" name="form-name" value="early-interest" />
+        <input type="text" name="name" />
+        <input type="text" name="company" />
+        <input type="email" name="email" />
+        <input type="tel" name="telephone" />
+    </form>
+
+    <form name="investor-info" method="POST" data-netlify="true" style="display: none;">
+        <input type="hidden" name="form-name" value="investor-info" />
+        <input type="text" name="name" />
+        <input type="text" name="company" />
+        <input type="email" name="email" />
+        <input type="tel" name="telephone" />
+    </form>
+
 </body>
 </html>
